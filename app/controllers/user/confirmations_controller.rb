@@ -1,12 +1,13 @@
 class User::ConfirmationsController < Devise::ConfirmationsController
+
+
   def show
-    self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token]) if params[:confirmation_token].present?
-    raise
+    self.resource = resource_class.find_by_digested_confirm_token(params[:confirmation_token])
     super if resource.nil? or resource.confirmed?
   end
 
   def confirm
-    self.resource = resource_class.find_by_confirmation_token(params[resource_name][:confirmation_token]) if params[resource_name][:confirmation_token].present?
+    self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token])
     if resource.update_attributes(params[resource_name].except(:confirmation_token)) && resource.password_match?
       self.resource = resource_class.confirm_by_token(params[resource_name][:confirmation_token])
       set_flash_message :notice, :confirmed
@@ -15,4 +16,5 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       render :action => "show"
     end
   end
+
 end
