@@ -4,7 +4,8 @@ DeviseOnlyMail::Application.routes.draw do
     confirmations: "user/confirmations"
   }
   devise_scope :user do
-    put "/user/confirm" => "confirmations#confirm"
+    patch "/user/confirm" => "user/confirmations#confirm"
+    #put "/user/confirm" => "confirmations#confirm"
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
