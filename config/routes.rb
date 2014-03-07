@@ -1,6 +1,7 @@
 DeviseOnlyMail::Application.routes.draw do
   devise_for :users, controllers: {
     registrations: "user/registrations",
+    sessions: "user/sessions",
     confirmations: "user/confirmations"
   }
   devise_scope :user do
