@@ -1,9 +1,11 @@
 DeviseOnlyMail::Application.routes.draw do
   devise_for :users, controllers: {
-    registrations: "user/registrations"
-#    sessions: "users/sessions"
+    registrations: "user/registrations",
+    confirmations: "user/confirmations"
   }
-
+  devise_scope :user do
+    put "/user/confirm" => "confirmations#confirm"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

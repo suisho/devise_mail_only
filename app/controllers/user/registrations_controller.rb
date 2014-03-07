@@ -1,5 +1,5 @@
 class User::RegistrationsController < Devise::RegistrationsController
- 
+=begin
   def new
     super
   end
@@ -7,5 +7,5 @@ class User::RegistrationsController < Devise::RegistrationsController
   def create
     super
   end
- 
+=end 
 end
