@@ -45,6 +45,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'simple_form'
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'formtastic'
