@@ -1,5 +1,4 @@
 class User::RegistrationsController < Devise::RegistrationsController
-  
   def new
     super
   end

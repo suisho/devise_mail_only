@@ -1,0 +1,7 @@
+<h2> You're almost done! Now create a password to securely access your account.</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => send(:"#{resource_name}_confirm_path")) do |form| %>
+  <%= form.input :password, :input_html => {:autofocus => true} %>
+  <%= form.input :password_confirmation %>
+  <%= form.input :confirmation_token, :as => :hidden %>
+  <%= form.button :submit , :label => 'Confirm Account' %>
+<% end %>
