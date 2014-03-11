@@ -1,4 +1,5 @@
 DeviseOnlyMail::Application.routes.draw do
+  devise_for :user_mail_confirmations
   devise_for :users, controllers: {
     registrations: "user/registrations"
 #    sessions: "users/sessions"
