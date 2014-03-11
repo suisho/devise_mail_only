@@ -1,3 +1,3 @@
 class UserInfo < ActiveRecord::Base
-  validate_precense_of :name
+  validates_presence_of :name
 end
