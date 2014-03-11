@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   attr_accessor :user_info
   validates_associated :user_info
-  has_one :user_ifno
+  has_one :user_info
+  belongs_to :user_mail_confirmation
 end
